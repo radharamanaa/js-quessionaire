@@ -7,25 +7,20 @@ require("prismjs/components/prism-jsx");
 function SingleQRes({ qNo, code, options, answer, userChoice }) {
   useEffect(() => Prism.highlightAll(), []);
   return (
-    <div className="w-full p-2 m-2 flex flex-col justify-start">
-      <div className="text-3xl font-thin">Question No {qNo}:</div>
-
+    <div
+      className="w-full lg:w-1/3 p-2 m-2 flex flex-col justify-start gap-2
+    border-t-2 border-indigo-700 border-x-2 border-b-2 rounded-lg"
+    >
+      <div className="text-5xl font-thin mb-4">Question No {qNo}:</div>
+      <div className="h-1 bg-indigo-200 w-full mb-4" />
       <div className="question-code ">
-        <pre className="language-javascript text-2xl     md:text-2xl">
+        <pre className="language-javascript text-2xl md:text-2xl">
           <code>{code}</code>
         </pre>
       </div>
-
-      <div className="options border-t-8 border-indigo-700 rounded-lg">
+      <div></div>
+      <div className="options rounded-lg justify-self-end">
         {options.map((item, index) => {
-          // console.log(
-          //   `for ${qNo} option ${
-          //     index + 1
-          //   }: userchoice:${userChoice}, answer:${answer}`
-          // );
-          // console.log(
-          //   `qNo:${qNo}:::${index + 1 === userChoice && userChoice !== answer}`
-          // );
           if (index + 1 === answer && answer === userChoice) {
             return (
               <div className="bg-green-600 text-slate-100 text-xl p-2">
@@ -35,6 +30,12 @@ function SingleQRes({ qNo, code, options, answer, userChoice }) {
           } else if (index + 1 === userChoice && userChoice !== answer) {
             return (
               <div className="bg-red-400 text-slate-100 text-xl p-2">
+                {index + 1}:&nbsp; {item}
+              </div>
+            );
+          } else if (index + 1 === answer) {
+            return (
+              <div className="bg-lime-400 text-slate-700 text-xl p-2">
                 {index + 1}:&nbsp; {item}
               </div>
             );

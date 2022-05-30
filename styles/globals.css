@@ -66,3 +66,7 @@ a {
     transform: translateZ(0) rotateY(0);
   }
 }
+
+pre.language-javascript code {
+  font-size: 1.25rem;
+}

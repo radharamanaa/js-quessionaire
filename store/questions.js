@@ -201,7 +201,7 @@ let q14 = {
   code: `let person = "Mark Twain";
 console.log(true || person);`,
   options: [`“Mark Twain”`, `undefined`, `True`, `False`],
-  answer: 1,
+  answer: 3,
 };
 let q15 = {
   code: `let person = "";

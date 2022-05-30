@@ -13,12 +13,12 @@ function QuestionOption({ item }) {
     <div className={`${style.option} flex p-2 m-1 items-center text-gray-200`}>
       <input
         type="radio"
-        className="mr-4 h-8 w-8"
+        className="mr-4 h-4 w-4"
         name="option"
         ref={radioRef}
       />
       <div
-        className="text-xl md:text-3xl leading-5 cursor-pointer"
+        className="text-xl md:text-2xl leading-5 cursor-pointer"
         onClick={clickRadio}
       >
         {item}

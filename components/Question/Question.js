@@ -8,7 +8,9 @@ require("prismjs/components/prism-javascript");
 require("prismjs/components/prism-css");
 require("prismjs/components/prism-jsx");
 import style from "./question.module.css";
+import think from "../assets/svgs/undraw_code_thinking_re_gka2.svg";
 import { localStorageVar } from "../../store/questions";
+import Image from "next/image";
 
 function Question({ qNumberPropZeroBased }) {
   function isAnyChecked() {
@@ -31,6 +33,13 @@ function Question({ qNumberPropZeroBased }) {
   const currentQuestionNumber = useSelector(
     (st) => st.question.currentQuestionNumber
   );
+  function getButtonText() {
+    if (qNumberPropZeroBased + 1 === noOfQuestions) {
+      return "Results!";
+    } else {
+      return "Next Question";
+    }
+  }
   if (
     isNaN(qNumberPropZeroBased) ||
     qNumberPropZeroBased !== currentQuestionNumber
@@ -95,22 +104,27 @@ function Question({ qNumberPropZeroBased }) {
           {qNumberPropZeroBased + 1}. What is the output of the following code?
         </div>
         <div className="question-code ">
-          <pre className="language-javascript text-2xl     md:text-2xl">
+          <pre className="language-javascript text-2xl md:text-2xl">
             <code>{currQuestion?.code}</code>
           </pre>
         </div>
-        <div className="options flex flex-col  mt-4">
-          {currQuestion?.options?.map((item) => (
-            <QuestionOption item={item} key={item} />
-          ))}
+        <div className="options-wrap flex">
+          <div className="options flex flex-col  mt-4 flex-1">
+            {currQuestion?.options?.map((item) => (
+              <QuestionOption item={item} key={item} />
+            ))}
+          </div>
+          <div className="svg w-1/2 hidden sm:flex">
+            <Image src={think} />
+          </div>
         </div>
         <div className="navigate flex justify-end">
           <button
             type="button"
-            className="justify-end p-2 bg-indigo-800 rounded-xl px-4 text-indigo-200 text-2xl cursor-pointer shadow-sm"
+            className="justify-end p-2 bg-indigo-800 rounded-xl px-4 text-slate-100 text-2xl cursor-pointer shadow-sm"
             onClick={nextQuestion}
           >
-            Next Question
+            {getButtonText()}
           </button>
         </div>
       </div>
