@@ -4,20 +4,13 @@ import "../styles/globals.css";
 import "../styles/prism.css";
 import styles from "../styles/Home.module.css";
 
-import { Provider } from "react-redux";
+import { Provider, useDispatch } from "react-redux";
 import { store } from "../store/store";
-
+import { useEffect } from "react";
+import { localStorageVar } from "../store/questions";
+import { questionActions } from "../features/question/questionSlice";
+let initialRun = true;
 function MyApp({ Component, pageProps }) {
-  // useEffect(() => {
-  //   let jsQuestionSt = localStorage.getItem('jsQuestions');
-  //   if (!jsQuestionSt){
-
-  //   }
-  //     return () => {
-  //       second;
-  //     };
-  // }, [third])
-
   return (
     <Provider store={store}>
       <div className={`${styles.main} relative`}>

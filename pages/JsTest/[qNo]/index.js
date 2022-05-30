@@ -5,10 +5,7 @@ import { qArray } from "../../../store/questions";
 export default function QuestionPage() {
   const router = useRouter();
   const questionNoZeroBased = Number(router.query.qNo);
-  if (isNaN(questionNoZeroBased)) return null;
-  if (questionNoZeroBased < qArray.length) {
-    return <Question qNumberPropZeroBased={questionNoZeroBased} />;
-  } else {
-    return <div className="text-8xl">Oops!</div>;
-  }
+  if (isNaN(questionNoZeroBased))
+    return <div className="text-4xl p-10 m-5">Error</div>;
+  return <Question qNumberPropZeroBased={questionNoZeroBased} />;
 }

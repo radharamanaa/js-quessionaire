@@ -8,13 +8,15 @@ export const questionSlice = createSlice({
   reducers: {
     setAnsForCurrQuestion: (state, action) => {
       state.questions[state.currentQuestionNumber].userChoice = action.payload;
-      state.currentQuestionNumber += 1;
+      if (state.currentQuestionNumber + 1 < state.questions.length)
+        state.currentQuestionNumber += 1;
     },
     proceedQuestionNumber: (state) => {
       state.currentQuestionNumber += 1;
     },
     setQuestionMode: (st) => {
       st.questions.forEach((item) => item.userChoice == null);
+      st.currentQuestionNumber = 0;
       st.showResults = false;
     },
     showResults: (state, action) => {
@@ -32,6 +34,7 @@ export const questionSlice = createSlice({
         state.currentQuestionNumber = action.payload;
       }
     },
+    setState: (state, action) => action.payload,
   },
 });
 

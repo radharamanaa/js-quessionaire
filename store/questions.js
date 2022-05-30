@@ -388,3 +388,5 @@ let initialState = {
 let qArray = initialState.questions;
 export default initialState;
 export { qArray };
+let localStorageVar = "codePrState";
+export { localStorageVar };
