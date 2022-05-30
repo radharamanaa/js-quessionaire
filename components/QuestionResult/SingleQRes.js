@@ -25,7 +25,7 @@ function SingleQRes({ qNo, code, options, answer, userChoice }) {
           // );
           // console.log(
           //   `qNo:${qNo}:::${index + 1 === userChoice && userChoice !== answer}`
-          );
+          // );
           if (index + 1 === answer && answer === userChoice) {
             return (
               <div className="bg-green-600 text-slate-100 text-xl p-2">
