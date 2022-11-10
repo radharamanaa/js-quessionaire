@@ -1,9 +1,15 @@
 .herocontainer {
-  background: no-repeat center/150%
+  background: no-repeat center/100%
     url("https://source.unsplash.com/4hbJ-eymZ1o");
   background-repeat: no-repeat;
+  transition: background 1s ease-in;
 }
 .innerhero {
   height: 75vh;
   margin: 0 auto;
+}
+
+.herocontainer:hover {
+  background: no-repeat center/125%
+    url("https://source.unsplash.com/4hbJ-eymZ1o");
 }

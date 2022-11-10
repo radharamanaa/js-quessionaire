@@ -12,7 +12,7 @@ let initialRun = true;
 export default function Home() {
   return (
     <>
-      <div className={`${styles.main} relative`}>
+      <div className={`${styles.main} relative w-full`}>
         <Main />
       </div>
     </>
