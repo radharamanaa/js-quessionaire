@@ -99,7 +99,7 @@ function Question({ qNumberPropZeroBased }) {
       >
         <div
           className={`mt-8 question-title text-xl md:text-4xl p-2 mb-4 
-        text-slate-50 font-thin tracking-wide`}
+        text-slate-50 tracking-wide`}
         >
           {qNumberPropZeroBased + 1}. What is the output of the following code?
         </div>
