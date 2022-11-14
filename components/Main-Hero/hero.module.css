@@ -1,15 +1,8 @@
 .herocontainer {
-  background: no-repeat center/100%
-    url("https://source.unsplash.com/4hbJ-eymZ1o");
+  background-image: url("../assets/images/juanjo-jaramillo-mZnx9429i94-unsplash.jpg");
+  background-size: cover;
   background-repeat: no-repeat;
-  transition: background 1s ease-in;
-}
-.innerhero {
-  height: 75vh;
-  margin: 0 auto;
+  background-position: 50% 0;
+  transition: background 2s ease-in;
 }
 
-.herocontainer:hover {
-  background: no-repeat center/125%
-    url("https://source.unsplash.com/4hbJ-eymZ1o");
-}

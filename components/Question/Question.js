@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import QuestionOption from "../QuestionOption/QuestionOption";
 import { questionActions } from "../../features/question/questionSlice";
-import Prism from "Prismjs";
+import Prism from "prismjs";
 require("prismjs/components/prism-javascript");
 require("prismjs/components/prism-css");
 require("prismjs/components/prism-jsx");
@@ -115,7 +115,7 @@ function Question({ qNumberPropZeroBased }) {
             ))}
           </div>
           <div className="svg w-1/2 hidden sm:flex">
-            <Image src={think} />
+            <Image src={think} alt="Nice"/>
           </div>
         </div>
         <div className="navigate flex justify-end">

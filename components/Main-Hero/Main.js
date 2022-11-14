@@ -3,18 +3,29 @@ import React from "react";
 import styles from "./hero.module.css";
 function Main() {
   return (
-    <div
-      className={`${styles.herocontainer}  w-full flex justify-center mx-auto mt-10 
-      rounded-lg border-2 md:border-2 md:border-dashed md:border-orange-600`}
-    >
+    <div className={` w-full flex justify-around h-[50rem]`}>
       <div
-        className={`${styles.innerhero} m-2 text-4xl md:text-8xl mx-auto mt-4 h-1/2  flex items-center`}
+        className={`mx-auto  w-full bg-color-greensh  flex flex-col md:flex-row`}
       >
-        <Link href="/JsTest/0">
-          <div className="bg-slate-700/75 p-20 text-white cursor-pointer hover:scale-105 transition-all">
+        <div
+          className="w-full my-auto text-gray-100 cursor-pointer 
+           flex flex-col items-center p-16"
+        >
+          <div className=" text-4xl md:text-8xl text-center ">
             Take the Javascript Test
           </div>
-        </Link>
+          <Link href="/JsTest/0">
+            <div>
+              <div className="hover:-translate-y-2 hover:bg-yellow-700 font-semibold transition-transform  px-16 py-8 bg-yellow-600 mt-16 text-2xl rounded-lg">
+                Start!
+              </div>
+            </div>
+          </Link>
+        </div>
+
+        <div className={`${styles.herocontainer} w-full h-[20rem] md:h-auto`}>
+          &nbsp;
+        </div>
       </div>
     </div>
   );
