@@ -12,8 +12,8 @@ module.exports = {
         "color-wh": "#FFFEFD",
       },
       fontFamily: {
-        ovo: ["Ovo", "serif"],
-        serif: ["Merriweather", "serif"],
+        roboto: ["Roboto", "sans-serif"],
+        vidaloka: ["Vidaloka", "serif"],
       },
     },
     plugins: [],

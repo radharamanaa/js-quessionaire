@@ -6,6 +6,7 @@ import styles from "../styles/Home.module.css";
 
 import { Provider } from "react-redux";
 import { store } from "../store/store";
+import Inspiration from "../components/inspiration/Inspiration";
 let initialRun = true;
 function MyApp({ Component, pageProps }) {
   return (
@@ -13,6 +14,7 @@ function MyApp({ Component, pageProps }) {
       <div className={`${styles.main} relative h-screen`}>
         <Header />
         <Component {...pageProps} />
+        <Inspiration />
         <Footer />
       </div>
     </Provider>

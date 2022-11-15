@@ -1,6 +1,5 @@
 import { useRouter } from "next/router";
 import Question from "../../../components/Question/Question";
-import { qArray } from "../../../store/questions";
 
 export default function QuestionPage() {
   const router = useRouter();

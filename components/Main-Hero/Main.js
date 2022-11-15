@@ -8,15 +8,16 @@ function Main() {
         className={`mx-auto  w-full bg-color-greensh  flex flex-col md:flex-row`}
       >
         <div
-          className="w-full my-auto text-gray-100 cursor-pointer 
+          className="w-full my-auto text-gray-100 
            flex flex-col items-center p-16"
         >
-          <div className="text-2xl md:text-4xl lg:text-8xl text-center ">
+          <div className="text-2xl md:text-4xl lg:text-7xl text-center ">
             Take the Javascript Test
           </div>
           <Link href="/JsTest/0">
             <div>
-              <div className="hover:-translate-y-2 hover:bg-yellow-700 font-semibold transition-transform px-8 py-4  md:px-16 md:py-8 bg-yellow-600 mt-16 text-2xl rounded-lg">
+              <div className="cursor-pointer hover:-translate-y-2 hover:bg-lime-700 
+              font-semibold transition-transform px-8 py-4  md:px-16 md:py-8 bg-lime-600 mt-16 text-2xl rounded-lg">
                 Start!
               </div>
             </div>

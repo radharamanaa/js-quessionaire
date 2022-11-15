@@ -15,11 +15,11 @@ export default function ShowAdvJSTestResults() {
   }
   let arr = useSelector((st) => st.question.questions);
 
-  if (arr.filter((item) => item.userChoice === null).length > 10) {
-    console.log("gettign q from localSt");
-    arr = JSON.parse(localStorage.getItem(localStorageVar)).questions;
-    console.log(arr);
-  }
+    if (arr.filter((item) => item.userChoice === null).length > 10) {
+      console.log("gettign q from localSt");
+      arr = JSON.parse(localStorage.getItem(localStorageVar)).questions;
+      console.log(arr);
+    }
   let scoreFin = useSelector((st) => st.question.finalScore);
   function colorForScore(score) {
     if (score < 30) return "bg-red-700";
@@ -27,13 +27,16 @@ export default function ShowAdvJSTestResults() {
     else if (score < 80) return "bg-indigo-700";
     else return "bg-lime-700";
   }
+
+  let colorForScoreVar = colorForScore(Math.floor((scoreFin * 100) / 25));
+  console.log(colorForScoreVar);
   return (
     <div className="flex flex-col items-center p-4 m-4 border-2 rounded-lg w-11/12">
       <div className="flex justify-center">
-        <div className="text-xl md:text-8xl">You Secured {scoreFin}</div>
+        <div className="text-xl md:text-8xl font-vidaloka font-thin text-slate-700">You Secured {scoreFin}/25</div>
         <ProgressBar
           percent={Math.floor((scoreFin * 100) / 25)}
-          color={colorForScore(Math.floor((scoreFin * 100) / 25))}
+          color={colorForScoreVar}
         />
       </div>
       <div className="buttonn mb-6">

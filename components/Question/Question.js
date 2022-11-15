@@ -7,7 +7,6 @@ import Prism from "prismjs";
 require("prismjs/components/prism-javascript");
 require("prismjs/components/prism-css");
 require("prismjs/components/prism-jsx");
-import style from "./question.module.css";
 import think from "../assets/svgs/undraw_code_thinking_re_gka2.svg";
 import { localStorageVar } from "../../store/questions";
 import Image from "next/image";
@@ -92,7 +91,7 @@ function Question({ qNumberPropZeroBased }) {
     localStorage.setItem(localStorageVar, JSON.stringify(store));
   }, [store]);
   return (
-    <div className={`${style.questionMainArea} w-full`} ref={divRef}>
+    <div className={`w-full mb-8`} ref={divRef}>
       <div
         className={`flex flex-col h-3/4 w-11/12 lg:w-1/2 mx-auto
     border-2 bg-indigo-500 rounded-lg mt-8 shadow-lg shadow-indigo-400 p-4 `}
@@ -103,7 +102,7 @@ function Question({ qNumberPropZeroBased }) {
         >
           {qNumberPropZeroBased + 1}. What is the output of the following code?
         </div>
-        <div className="question-code ">
+        <div className="question-code ml-4">
           <pre className="language-javascript text-2xl md:text-2xl">
             <code>{currQuestion?.code}</code>
           </pre>
@@ -114,7 +113,7 @@ function Question({ qNumberPropZeroBased }) {
               <QuestionOption item={item} key={item} />
             ))}
           </div>
-          <div className="svg w-1/2 hidden sm:flex">
+          <div className="svg w-1/3 hidden sm:flex">
             <Image src={think} alt="Nice"/>
           </div>
         </div>

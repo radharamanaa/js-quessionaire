@@ -1,13 +1,30 @@
 import React, { useEffect, useRef } from "react";
 import styles from "./progressbar.module.css";
+
+
+function returnColorForPercent(percent){
+  if(percent <=25){
+    return "#F61067";
+  }
+  if(percent >25 && percent<=50){
+    return "#2D3047";
+  }
+  if(percent>50 && percent<75){
+    return "#FFFD82";
+  }
+  if(percent >75){
+    return "#7161EF";
+  }
+}
+
 function ProgressBar({ percent, color }) {
   const svgRef = useRef();
   useEffect(() => {
     svgRef.current.style.stroke = { color };
   }, []);
   return (
-    <div className={`${styles.singleChart} flex justify-center`}>
-      <svg viewBox="0 0 36 36" class={`${styles.circularChart}`}>
+    <div className={`${styles.singleChart} flex justify-end `}>
+      <svg viewBox="0 0 36 36" className={`${styles.circularChart}`}>
         <path
           className={styles.circleBg}
           d="M18 2.0845
@@ -17,7 +34,8 @@ function ProgressBar({ percent, color }) {
         <path
           ref={svgRef}
           className={styles.circle}
-          stroke-dasharray={`${percent}, 100`}
+          strokeDasharray={`${percent}, 100`}
+          stroke={returnColorForPercent(percent)}
           d="M18 2.0845
           a 15.9155 15.9155 0 0 1 0 31.831
           a 15.9155 15.9155 0 0 1 0 -31.831"

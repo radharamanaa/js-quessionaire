@@ -13,7 +13,7 @@ function QuestionOption({ item }) {
     <div className={`${style.option} flex p-2 m-1 items-center text-gray-200`}>
       <input
         type="radio"
-        className="mr-4 h-4 w-4"
+        className="mr-4 h-4 w-4 checked:bg-indigo-500"
         name="option"
         ref={radioRef}
       />

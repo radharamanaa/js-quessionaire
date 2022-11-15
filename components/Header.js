@@ -1,26 +1,49 @@
-  import Link from "next/link";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
+import { useDispatch } from "react-redux";
+import { questionActions } from "../features/question/questionSlice";
 
 function Header({ text = "CodePriest" }) {
+  const dispatch = useDispatch();
+  const router = useRouter();
+  function resetToQuestionMode() {
+    dispatch(questionActions.setQuestionMode());
+    router.push(`/JsTest/0`);
+  }
   return (
-    <header className="header-container w-full bg-indigo-900">
+    <header className="header-container w-full bg-indigo-800">
       <div className="header-inn-container flex justify-between w-3/4 mx-auto p-4">
         <div
-          className="text-4xl font-thin p-2 pt-4 text-gray-100 hover:underline
-          tracking-wider hover:underline-offset-4 transition-all font-ovo"
+          className="flex justify-center items-center text-4xl font-thin p-2 pt-4 text-gray-100 hover:underline
+          tracking-wider hover:underline-offset-4 transition-all font-vidaloka"
         >
           <div className="flex justify-center items-center">
-            {/* <div>
-              <svg src="./assets/svgs/Logo13.svg" fill="#030313" alt="" width={"5rem"} height={"5rem"}/>
-            </div> */}
-          <Link href={"/"}>{text}</Link>
+            <Link href={"/"} onClick={resetToQuestionMode}>
+              {text}
+            </Link>
           </div>
         </div>
-        <div className="p-2 pt-4 flex font-ovo tracking-wide items-center text-gray-100 text-xl  ">
-          <a href="http://www.github.com/radharamanaa">
-          About us
-          </a>
-        </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+        <div className="p-2 pt-4 flex tracking-wide items-center justify-center text-gray-100 text-xl  ">
+          <div className="px-4">
+            <a
+              href="http://www.github.com/radharamanaa"
+              target={"_blank"}
+              rel={"noreferrer"}
+            >
+              About Me!
+            </a>
+          </div>
+          <div className="px-4">
+            <a
+              href="https://radharamanaa.github.io/Tasky-Redux/"
+              target={"_blank"}
+              rel={"noreferrer"}
+            >
+              Reminder App
+            </a>
+          </div>
+        </div>
       </div>
     </header>
   );
