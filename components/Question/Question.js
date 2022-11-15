@@ -110,7 +110,7 @@ function Question({ qNumberPropZeroBased }) {
         <div className="options-wrap flex">
           <div className="options flex flex-col  mt-4 flex-1">
             {currQuestion?.options?.map((item) => (
-              <QuestionOption item={item} />
+              <QuestionOption item={item} key={item}/>
             ))}
           </div>
           <div className="svg w-1/3 hidden sm:flex">
