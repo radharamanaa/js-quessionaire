@@ -33,7 +33,7 @@ export default function ShowAdvJSTestResults() {
   return (
     <div className="flex flex-col items-center p-4 m-4 border-2 rounded-lg w-11/12">
       <div className="flex justify-center">
-        <div className="text-xl md:text-8xl font-vidaloka font-thin text-slate-700">You Secured {scoreFin}/25</div>
+        <div className="text-5xl md:text-8xl font-vidaloka font-thin text-slate-700">You Secured {scoreFin}/25</div>
         <ProgressBar
           percent={Math.floor((scoreFin * 100) / 25)}
           color={colorForScoreVar}
@@ -41,7 +41,7 @@ export default function ShowAdvJSTestResults() {
       </div>
       <div className="buttonn mb-6">
         <button
-          className="text-xl lg:text-2xl py-2 px-8 mt-8 bg-indigo-600 text-white rounded-xl"
+          className="text-2xl lg:text-2xl py-2 px-8 mt-8 bg-indigo-600 text-white rounded-xl"
           onClick={resetToQuestionMode}
         >
           Take the Test Again!

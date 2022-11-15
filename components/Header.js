@@ -12,20 +12,20 @@ function Header({ text = "CodePriest" }) {
     router.push(`/JsTest/0`);
   }
   return (
-    <header className="header-container w-full bg-indigo-800">
-      <div className="header-inn-container flex justify-between w-3/4 mx-auto p-4">
+    <header className="header-container w-full first-letter:text:2xl bg-indigo-600 mb-16 shadow-lg">
+      <div className="container header-inn-container flex justify-between px-16  mx-auto p-4 ">
         <div
-          className="flex justify-center items-center text-4xl font-thin p-2 pt-4 text-gray-100 hover:underline
+          className="flex justify-center items-center font-thin p-2 pt-4 text-gray-100 hover:underline
           tracking-wider hover:underline-offset-4 transition-all font-vidaloka"
         >
-          <div className="flex justify-center items-center">
+          <div className="flex justify-center items-center text-xl tracking-wider first-letter:text-4xl">
             <Link href={"/"} onClick={resetToQuestionMode}>
               {text}
             </Link>
           </div>
         </div>
-        <div className="p-2 pt-4 flex tracking-wide items-center justify-center text-gray-100 text-xl  ">
-          <div className="px-4">
+        <div className="p-2 pt-4 flex tracking-wide items-center justify-center text-gray-100 text-md  ">
+          <div className="px-4 font-roboto hover:underline">
             <a
               href="http://www.github.com/radharamanaa"
               target={"_blank"}
@@ -34,7 +34,7 @@ function Header({ text = "CodePriest" }) {
               About Me!
             </a>
           </div>
-          <div className="px-4">
+          <div className="px-4 font-roboto hover:underline">
             <a
               href="https://radharamanaa.github.io/Tasky-Redux/"
               target={"_blank"}

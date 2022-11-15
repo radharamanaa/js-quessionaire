@@ -6,9 +6,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "color-greensh": "#011936",
-        "color-yellwsh": "#F9DC5C",
-        "color-limish": "#ED254E",
+        "reddish":"#F0386B",
         "color-wh": "#FFFEFD",
       },
       fontFamily: {

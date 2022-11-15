@@ -7,7 +7,7 @@ function QuestionOption({ item }) {
   }
   useEffect(() => {
     radioRef.current.checked = false;
-  }, []);
+  }, [item]);
 
   return (
     <div className={`${style.option} flex p-2 m-1 items-center text-gray-200`}>
@@ -18,7 +18,7 @@ function QuestionOption({ item }) {
         ref={radioRef}
       />
       <div
-        className="text-xl md:text-2xl leading-5 cursor-pointer"
+        className="text-xl md:text-2xl leading-5 cursor-pointer font-medium font-roboto text-gray-100"
         onClick={clickRadio}
       >
         {item}

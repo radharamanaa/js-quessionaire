@@ -36,7 +36,7 @@ function Question({ qNumberPropZeroBased }) {
     if (qNumberPropZeroBased + 1 === noOfQuestions) {
       return "Results!";
     } else {
-      return "Next Question";
+      return "Next";
     }
   }
   if (
@@ -97,7 +97,7 @@ function Question({ qNumberPropZeroBased }) {
     border-2 bg-indigo-500 rounded-lg mt-8 shadow-lg shadow-indigo-400 p-4 `}
       >
         <div
-          className={`mt-8 question-title text-xl md:text-4xl p-2 mb-4 
+          className={`mt-8 question-title text-xl md:text-3xl font-roboto p-2 mb-4 
         text-slate-50 tracking-wide`}
         >
           {qNumberPropZeroBased + 1}. What is the output of the following code?
@@ -110,17 +110,18 @@ function Question({ qNumberPropZeroBased }) {
         <div className="options-wrap flex">
           <div className="options flex flex-col  mt-4 flex-1">
             {currQuestion?.options?.map((item) => (
-              <QuestionOption item={item} key={item} />
+              <QuestionOption item={item} />
             ))}
           </div>
           <div className="svg w-1/3 hidden sm:flex">
-            <Image src={think} alt="Nice"/>
+            <Image src={think} alt="Think" />
           </div>
         </div>
         <div className="navigate flex justify-end">
           <button
             type="button"
-            className="justify-end p-2 bg-indigo-800 rounded-xl px-4 text-slate-100 text-2xl cursor-pointer shadow-sm"
+            className="justify-end p-2 bg-indigo-800 rounded-xl px-4 
+            text-slate-100 text-2xl cursor-pointer shadow-sm hover:scale-105 transition-transform"
             onClick={nextQuestion}
           >
             {getButtonText()}
